@@ -4,10 +4,11 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
-	addr := ":8083"
+	port := os.Getenv("PORT")
 
 	http.HandleFunc("/ping", func(writer http.ResponseWriter, request *http.Request) {
 		_, err := io.WriteString(writer, "pong")
@@ -16,7 +17,7 @@ func main() {
 		}
 	})
 
-	err := http.ListenAndServe(addr, nil)
+	err := http.ListenAndServe(":"+port, nil)
 	if err != nil {
 		log.Fatalf("failed to serve %v", err)
 	}
