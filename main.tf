@@ -18,7 +18,7 @@ resource "google_cloud_run_service" "ping" {
   template {
     spec {
       containers {
-        image = "ghcr.io/huseyinbabal/ping:latest"
+        image = "gcr.io/protocloud-368418/ping:latest"
       }
     }
   }
