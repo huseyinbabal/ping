@@ -45,4 +45,5 @@ jobs:
       - run: terraform init
 
       - run: terraform plan -no-color
+
       - run: terraform apply -auto-approve
