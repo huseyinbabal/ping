@@ -11,7 +11,7 @@ func main() {
 	port := os.Getenv("PORT")
 
 	http.HandleFunc("/ping", func(writer http.ResponseWriter, request *http.Request) {
-		_, err := io.WriteString(writer, "pong")
+		_, err := io.WriteString(writer, "pong v2")
 		if err != nil {
 			log.Fatalf("failed to run ping server %v", err)
 		}
